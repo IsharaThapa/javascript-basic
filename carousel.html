@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/carousel.css">
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    
+</head>
+<body>
+    <main>
+        <div class="data">
+            <div class="swiper carouselSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="image">
+                        <img class="image-data" src="/assets/images/1.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                        <img class="image-data" src="/assets/images/2.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                        <img class="image-data" src="/assets/images/3.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-button-next carousel-next"></div>
+                <div class="swiper-button-prev carousel-prev"></div>
+            </div>  
+        </div>  
+        
+        <div class="brand">
+            <div class="swiper brandCcarousel">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="image-brand">
+                            <img class="" src="/assets/images/1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="image-brand">
+                            <img class="" src="/assets/images/2.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="image-brand">
+                            <img class="" src="/assets/images/3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next brand-next"></div>
+                <div class="swiper-button-prev brand-prev"></div>
+              </div>
+        </div>
+    </main>
+        
+ <!-- Swiper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".carouselSwiper", {
+        loop: true,
+        navigation: {
+          nextEl: ".carousel-next",
+          prevEl: ".carousel-prev",
+        },
+    });
+
+    var swiper = new Swiper(".brandCcarousel", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+          nextEl: ".brand-next",
+          prevEl: ".brand-prev",
+        },
+    });
+  </script>
+
+</body>
+</html>
