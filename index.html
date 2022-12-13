@@ -49,24 +49,182 @@
     
     <!-- 5. (Array.from)-->
     <!-- <script> 
+        It is used to break down all the characters or integer that is in single form. For eg: if there is a word "Hello" then it breaks into "H", "e", "l", "l", "o".
        console.log(Array.from("amazing"));
     </script>
 output will be a,m,a,.... -->
 
-<!-- 6. -->
-<!-- <script>
+<!-- 6. 
+<script>
     const array = "amazing";
 result = Array.from(array);
 console.log(result);
 </script> -->
  
- <!-- 7.(array.length) -->
- <!-- <script>
+ <!-- 7.(array.length)
+  It is used count the number of elements in array. 
+ <script>
    const a=["apple","ball","cat"];
    console.log(a.length);
  </script>
  output 3 -->
 
+ <!-- 8.array.at()
+    It is used to pinpot an exact item in the array -->
+    <!-- <script>
+        const a=["Shyam","Krishna","Radha"];
+        console.log(a.at(1));
+    </script> -->
 
+<!-- 9. array.concat()
+It is used combine/concatenate two or number of different arrays into one
+    <script>
+        const a=["Aava","Karishma","Popat"];
+        const b=["Aava","Karishma","Popat"];
+        result=a.concat(b);
+        console.log(result);
+
+    </script> -->
+    <!-- 
+        10.array.copyWithin()==>copyWithin(target, starting index, ending index)
+        <script>
+            const a = ["is","am","the","has","have"];
+            result = a.copyWithin(2,0,3);
+            console.log(result);
+        </script>
+        output: 
+        ['is', 'am', 'is', 'am', 'the'] -->
+        
+        
+        <!-- 11.array.fill()
+            It is used to replace the items in the array. It is similar to " copyWithin() " method but instead of trageting the index of an array to change elements it provides the value and starting index of an array and end index of an array.
+            Syntax:
+            fill(value, starting index, ending index)
+            <script>
+                const a = ["a","bc","de","fg","hi","jk"];
+                console.log(a.fill('fr',1,3));
+            </script> -->
+            
+        <!-- 12.array.entries()
+        It returns the key-value pairs of an index.
+        <script>
+            const a = ["is","am","the","has","have","should"];
+                for (const[index,element] of a.entries()){
+                    console.log(index,element);
+                }
+            </script> -->
+        
+        <!-- 13. array.every()
+        It returns boolean value i.e true or false. It returns true if it satisfies the function.
+        <script>
+            const a = [1,3,10,12,18,30];
+            console.log(a.every(b));
+            function b(num){
+                return num < 30 ;
+            }
+  </script> -->
+
+
+  <!-- 14. array.filter()
+  It is used to filter the elements as it required.
+  <script>
+    const a = [3,6,8,9,10,56,800,985];
+    console.log(a.filter(b));
+    function b(num){
+        return num<10 ;
+    }
+  </script> 
+output 3,6,8,9-->
+  
+  <!-- 15.array.find()
+    It is used to find the element in an array if certain requirements meets or the functions get statisfied.
+    <script>
+        const a = [3,6,8,9,10,56,800,985];
+        console.log(a.find(b));
+        function b(num){
+            return num<10 ;
+        }
+      </script>
+      output:3  -->
+
+      <!-- 16.array.findIndex()
+         It is similar to .find() method but it returns the index of an element in an array.
+        <script>
+            const a = [6,8,16,19,20,34,37];
+                console.log(a.findIndex(b));
+                function b(num){
+                return num > 10;
+                }
+        </script>
+        output: 2 -->
+
+        <!-- 17.array.findLast()
+    It scans the whole array and print the last satisfied function elements of an array.
+    <script>
+        const a = [6,8,16,19,20,34,37,40];
+            console.log(a.findLast(b));
+            function b(num){
+            return num > 10;
+            }
+    </script>
+    output: 40 -->
+
+    <!-- 18.array.flat()
+    It is used to concatenate the nested array elements as per the requirements.
+   <script>
+     const a = [1,2,3,[1,2,5,[5,7]]];
+    console.log(a.flat(2));
+   </script>
+   output:[1,2,3,1,2,5,5,7] -->
+
+   <!-- 19.
+   array.flatMap()
+   <script>
+    const arrayFlatmap = [1,2,[3,4],5,[6,7], [8]];
+    console.log(arrayFlatmap.flatMap(num => num))
+   </script>
+   output:[1,2,3,4,5,6,7,8] -->
+
+   <!-- 20.
+   array.forEach()
+    It is used iterate the function for each elements which means that it calls the function for every elements on the array.
+   <script>
+     const a = [1,2,3,4,5,6];
+     a.forEach(element => console.log(element));
+   </script>
+   output: 1
+    2
+    3
+    4
+    5
+    6 -->
+
+    <!-- 21.
+    array.includes()
+    It is a boolean method which returns true if the requirement meets.
+    <script>
+        const a = [1,2,3];
+        console.log(a.includes(2));
+    </script> -->
+
+    <!-- 22.array.indexOf()
+    It returns the index of an element where the element resides and if it didn't find the element then it returns -1.
+    <script>
+        const a = ["animal", "plant", "dog"];
+        console.log(a.indexOf("plant"));
+        console.log(a.indexOf("fruit"));
+    </script> -->
+
+    <!-- 23.array.join()
+    It is used to join all the elements of an array and returns as a new string.
+
+    <script>
+        const a = ["animal", "plant", "dog"];
+            console.log(a.join());
+            console.log(a.join(":"));
+    </script>
+    output:animal,plant,dog
+     animal:plant:dog -->
+     
 </body>
 </html>
