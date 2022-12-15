@@ -1,0 +1,102 @@
+/* Recommended products */
+/* Heading */
+.heading h2{
+    padding-top: 15px;
+    font-size: 18px;
+    font-family: 'Barlow Condensed';
+    line-height:22px;
+    margin:0 auto;
+    letter-spacing: 10%;
+    font-weight:700;
+    
+}
+/* card */
+ .card-item{
+   padding:7px;
+} 
+.rating-wish{
+    display:flex;
+    justify-content: space-between;
+}
+.ratings{
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    font-size:14px;
+}
+
+ .wish-list{
+    display:grid;
+    padding-right: 10px; 
+    gap:10px;   
+    padding-top:6px;
+}
+.wish{
+    display:flex;
+    justify-content: end;
+    color:#BABABA;
+}
+
+.star::before {
+color:#FFC700;
+}
+.image{
+    text-align: center;
+    padding-bottom: 15px;
+}
+.navigation{
+   float:right;
+    justify-content: end;
+    font-size: 20px;
+    padding-bottom: 15px;
+    gap:10px;
+}
+.product-name{
+    text-align: center;
+    font-size:16px;
+    font-weight: bold;
+    font-family:'Barlow Condensed';
+    
+}
+
+
+.card-end{
+    display:flex;
+    justify-content:space-around;
+}
+.price h4{
+    margin-bottom: 0px;
+}
+.button{
+    display: flex;
+    align-items: end;
+}
+
+.btn{
+    border-radius: 0px;
+    color:black;
+    font-family: 'nunito';
+    font-size: 12px;
+    padding:10px 15px;
+    text-transform: uppercase;
+}
+
+
+.price h6{
+    color:#b6b2b2 ;
+    line-height:9.6px;
+    font-size: 9px;
+}
+.price h4{
+    font-size:12px;
+    }
+
+.price > h4 > .amount{
+     font-size:16px;
+}
+.swiper-pagination{
+   position:relative;
+   padding-top:20px;
+}
+ 

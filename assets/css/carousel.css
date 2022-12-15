@@ -14,6 +14,9 @@
 {
     margin: 150px 0px 50px;
 }
+.swiper brandCcarousel{
+    padding: 50px;
+}
 
 .brand .swiper-slide .image-brand img{
     width: 100%;
@@ -21,3 +24,24 @@
     object-fit: cover;
     object-position: center;
 }
+
+.brand-paginate  {
+    position:relative;
+    display:flex;
+    float:right;
+    padding: 30px;
+    gap: 20px;
+    
+    
+}
+ .brand-next{
+   font-size: 40px;
+}
+.brand-prev{
+    font-size: 40px;
+ }
+
+
+
+
+   
