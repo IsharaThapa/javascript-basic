@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/toogl.css">
+
+</head>
+<body>
+    <button type="submit" class="btn" onclick="myFunction()">Login</button>
+
+    <form id="form" class="login-form">
+        <h3>Login Form</h3>
+      <div class="input">
+        <div class="name">
+            <input type="text " placeholder="name" class="form-input">
+       </div>
+       <div class="number">
+            <input type="number" placeholder="number" class="form-input">
+       </div>
+        <div class="email">
+            <input type="email" placeholder="email" class="form-input">
+        </div>
+    </div>
+    <button type="submit">Submit</button>
+        <p class="register" onclick="register()">Click here to Register</p></span>
+    </form>
+
+        <form id="register-form" class="login-form">
+            <h3>Register Form</h3>
+          <div class="input">
+            <div class="name">
+                <input type="text " placeholder="name" class="form-input">
+            </div>
+            <div class="number">
+                <input type="number" placeholder="number" class="form-input">
+            </div>
+             <div class="email">
+                 <input type="email" placeholder="email" class="form-input">
+             </div>
+             <div class="address">
+                 <input type="text" placeholder="address" class="form-input">
+            </div>
+            </div>    
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+                var x = document.getElementById("form");
+                var b=document.getElementById("register-form");
+                    function myFunction(){
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+                        } else {
+                            x.style.display = "block";
+                            b.style.display = "none";
+                        }
+                    }
+                    function register(){
+                        if (b.style.display === "block") {
+                            b.style.display = "none";
+                        } else {
+                            b.style.display = "block";
+                            x.style.display ="none";
+                        }
+        }
+
+           
+           
+
+    </script>
+</body>
+</html>

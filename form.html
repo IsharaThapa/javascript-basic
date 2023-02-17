@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Form</h3>
+        <form action="" method="get" id="form-value">
+            <div class="name">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name" id="name" >
+            </div>
+            <div class="class">
+                <label>Class</label>
+                <input type="text" class="form-control" name="class" id="class">
+            </div>
+            <div class="Roll no ">
+                <label>Roll number</label>
+                <input type="number" class="form-control" name="roll-no" id="roll-no">
+            </div> 
+            <button type="submit" class="btn " onclick="form()" id="btn">Submit</button>
+        </form>
+        <p class="output" name="out" id="new"></p>
+        <script>
+            const a = document.getElementById('name');
+            const b = document.getElementById('class');
+            const c = document.getElementById('roll-no');
+            const d = document.getElementById('new');
+            function form(){
+                   d.innerHTML = a.value;
+                }
+                btn.addEventListener('click',fun1)
+            
+        </script>
+       
+</body>
+</html>

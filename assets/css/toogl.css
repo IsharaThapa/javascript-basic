@@ -1,0 +1,16 @@
+#form{
+    display:none;
+}
+#register-form{
+    display:none;
+}
+.login-form{
+   text-align: center;
+}
+.input{
+    display: grid;
+    gap: 20px;
+}
+.form-input{
+    size: 50px;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <style>
+    .frame{
+      display: grid;
+      justify-content: center
+    }
+    .input-output{
+        height: 8rem;
+        font-size: 28px;
+        width: 100%;
+        font-weight: 600;
+        background-color: rgb(189, 186, 186);
+        color: rgb(88, 86, 86);
+        border:none ;
+        outline: none;
+        padding-left:10px;
+        border-radius:8px;
+      }
+      .calculator_elements{
+        border:1px solid rgb(179, 174, 174);
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .input-buttons{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        
+      }
+      .calc_btn{
+        border-radius:11px;
+        border:2px solid #a7a6a5;
+        color:#747575;
+        font-family:Arial;
+        font-size:25px;
+        font-weight:bolder;
+        padding:8px 15px;
+        margin:10px 10px;
+}
+
+      </style>
+ </style>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row pt-3 ">
+        <div class="frame">
+          <div class="screen">
+            <textarea name="number" id="output" class="input-output" readonly></textarea>
+          </div>
+       <div class="calculator_elements  ">
+          <div class=" input-buttons">
+            <button onclick="onClick(8)" class="calc_btn">8</button>
+            <button onclick="onClick(9)" class="calc_btn">9</button>
+            <button onclick="onClick(4)" class="calc_btn">4</button>
+            <button onclick="onClick(5)" class="calc_btn">5</button>
+            <button onclick="onClick(6)" class="calc_btn">6</button>
+            <button onclick="onClick(1)" class="calc_btn">1</button>
+            <button onclick="onClick(2)" class="calc_btn">2</button>
+            <button onclick="onClick(3)" class="calc_btn">3</button>
+            <button onclick="onClick(0)" class="calc_btn">0</button>
+      
+            <button onclick="operation(`+`)" class="calc_btn">+</button>
+            <button onclick="operation(`-`)" class="calc_btn">-</button>
+            <button onclick="operation(`*`)" class="calc_btn">*</button>
+            <button onclick="operation(`/`)" class="calc_btn">/</button>
+            
+            <button onclick="clearOutput()" id="reset" class="calc_btn btn-danger">AC</button>
+            <button onclick="calculate()" id="equal" class="calc_btn btn-primary">=</button>
+          </div>  
+        </div>  
+       </div>
+     </div>
+     </div>
+   
+    
+    <script>
+      const output = document.getElementById("output");
+
+      let input1 = "";
+      let input2 = "";
+      let operator = "";
+      let result = 0;
+
+      function onClick(num) {
+        if (operator === "" && input2 === "") {
+          input1 += num;
+          output.innerHTML = input1;
+        }
+        else if(operator !== "" && input1 !== ""){
+          input2 += num;
+          output.innerHTML = `  ${input1} ${operator} ${input2}`;
+        } 
+      }
+
+      function operation(char) {
+        operator = char;
+        output.innerHTML = `  ${input1} ${operator}`;
+      }
+
+      function clearOutput() {
+        output.innerHTML = "";
+        input1 = "";
+        input2 = "";
+        operator = "";
+      }
+
+      function calculate() {
+        // if all the inputs are empty
+        if(operator === "" && (input1 === "" || input2 === "")) {
+          output.innerHTML = " ";
+        } else if (operator === "+") {
+          result = parseInt(input1) + parseInt(input2);
+          output.innerHTML = `  ${input1} ${operator} ${input2}\n ${result}`;
+        } else if (operator === "-") {
+          result = parseInt(input1) - parseInt(input2);
+          output.innerHTML = `  ${input1} ${operator} ${input2}\n ${result}`;
+        } else if (operator === "*") {
+          result = parseInt(input1) * parseInt(input2);
+          output.innerHTML = `  ${input1} ${operator} ${input2}\n ${result}`;
+        } else if (operator === "/") {
+          result = parseInt(input1) / parseInt(input2);
+          output.innerHTML = `  ${input1} ${operator} ${input2}\n ${result}`;
+        } else {
+          output.value = result;
+        }
+      } 
+    </script>
+  </body>
+</html>

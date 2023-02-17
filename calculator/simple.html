@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html lang = "en">  
+<head>  
+<title> JavaScript Calculator </title>  
+  
+</head>  
+<body>   
+<div class= "container">  
+<form name = "calculate">  
+  <input id = "calc" type ="text" name = "input"> <br> <br>  
+  
+ <table>
+    <tr>
+        <td> <input type = "button" value = "1" onclick = "calculate(1)"></td> 
+        <td> <input type = "button" value = "2" onclick = "calculate.input.value += '2' "></td>  
+        <td><input type = "button" value = "3" onclick = "calculate.input.value += '3' "></td>  
+        <td><input type = "button" value = "+" onclick = "calculate.input.value += '+' "> </td> 
+    </tr>        
+     <tr>        
+           <td> <input type = "button" value = "4" onclick = "calculate.input.value += '4' ">  </td>
+           <td><input type = "button" value = "5" onclick = "calculate.input.value += '5' "> </td> 
+            <td><input type = "button" value = "6" onclick = "calculate.input.value += '6' "> </td> 
+            <td><input type = "button" value = "-" onclick = "calculate.input.value += '-' "> </td> 
+     </tr>  
+     <tr>        
+        <td> <input type = "button" value = "7" onclick = "calculate.input.value += '7' "></td>  
+        <td> <input type = "button" value = "8" onclick = "calculate.input.value += '8' "></td>  
+        <td><input type = "button" value = "9" onclick = "calculate.input.value += '9' "> </td> 
+        <td><input type = "button" value = "*" onclick = "calculate.input.value += '*' "></td>  
+    </tr> 
+    <tr>
+        <td><input type = "button" value = "/" onclick = "calculate.input.value += '/' "></td>  
+        <td> <input type = "button" value = "0" onclick = "calculate.input.value += '0' "> </td> 
+        <td>  <input type = "button" value = "." onclick = "calculate.input.value += '.' "></td>  
+           <!-- eval() function evaluates JavaScript code represented as a string and returns its completion value
+           disadvantage:invoking eval can crash a computer and Terribly slow   -->
+        <td><input type = "button" value = "=" onclick = "calculate.input.value = eval(calculate.input.value) "> </td> 
+              
+          
+          <td><input type = "button" value = "Clear All" onclick = "calculate.input.value = ' ' " id= "clear" > </td>
+    </tr>
+ </table>
+    
+</form>  
+</div>
+  
+</body>  
+</html>  

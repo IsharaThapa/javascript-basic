@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            Input box
+        </title>
+        <style>
+            #font-size{
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <form action = " " method ="post" onsubmit="appendToH1()">
+            <!-- <label >Name</label> -->
+            
+       
+            <input type ="text" name="name" id="name" autofocus/>
+                 
+         <button type="submit" >Submit</button>
+        </form>
+         
+            <h1 id ="font-size"></h1>
+        
+        <script>
+            function appendToH1(){
+                event.preventDefault();
+                let a = document.getElementById("name").value;
+                document.getElementById("font-size").innerHTML = a;
+            } 
+            document.querySelector('#font-size').addEventListener('mouseover', function(){
+                //Move to random position
+                var winWidth = window.innerWidth;
+                var winHeight = window.innerHeight;
+
+                let randomTop = getRandomNumber(0, winHeight);
+                let randomLeft = getRandomNumber(0, winWidth);
+                console.log(randomTop, randomLeft)
+                this.style.top = randomTop +"px";
+                this.style.left = randomLeft +"px";
+
+
+            })
+            function getRandomNumber(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+        </script>
+    </body>
+</html>

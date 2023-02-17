@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    Calculator
+    <!-- style -->
+    <!-- <link href ="/assets/calculator.css" rel="stylesheet"> -->
+    <!-- boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+       <div class="container">
+       <form action ="#" method="post" >
+        <table class="table table-bordered 1px">
+            <tr>
+                <td colspan="3">
+                    <input type="number" class= "first_number" id ="first_number" ><br/>
+                    <input type="number" class= "last_number" id ="last_number" ><br/>
+
+                </td>
+                <td>
+                    <p id ="result"></p>
+                </td>
+            </tr>
+            <tr>
+                <td><input type = "button" value ="+"  class = "operation" ></td>
+                <td><input type = "button" value ="-" class = "operation" ></td>
+                <td><input type = "button" value ="*" class = "operation" ></td>
+                <td><input type = "button" value ="/" class = "operation" ></td>
+            </tr>
+            <tr>
+                <td ><input type = "button" value ="7"  class="number"></td>
+                <td><input type = "button" value ="8"   class="number"></td>
+                <td><input type = "button" value ="9" class="number" ></td>
+                <td rowspan="4"><input type = "button" class="equals" value ="=" ></td>
+            </tr>
+            <tr>
+                <td><input type = "button" value ="4" class="number" ></td>
+                <td><input type = "button" value ="5" class="number" ></td>
+                <td><input type = "button" value ="6" class="number" ></td>
+            </tr>
+            <tr>
+                <td><input type = "button" value ="1" class="number" ></td>
+                <td><input type = "button" value ="2" class="number" ></td>
+                <td><input type = "button" value ="3" class="number" ></td>
+            </tr>
+            <tr>
+                <td><input type = "button" value ="0" class="number" ></td>
+                <td><input type = "button" value ="AC"  class="clear" onclick ="clearScreen()"></td>
+                <td><input type = "button" value ="." class="number"></td>
+            </tr>
+        </table>
+       </form>
+       
+       </div>
+       <script>
+        class Calculator{
+            constructor(firstnumber,lastnumber){
+                this.firstnumber = firstnumber
+                this.lastnumber = lastnumber
+                this.clearScreen()
+            }
+            clearScreen(){
+                this.first_number = ''
+                this.last_number = ''
+                this.operation = undefined
+
+            }
+            appendNumber(number){
+                if(number === '.' && this.last_number.includes('.'))return
+                this.last_number = this.last_number.toString() + number.toString()
+            }
+            chooseOperation(operation){
+                if(this.last_number === '')return
+                if(this.first_number !== ''){
+                    this.compute()
+                }
+                this.operation = operation
+                this.first_number = this.last_number
+                this.last_number = ''
+
+            }
+            compute(){
+                let computation 
+                const prev = parseFloat(this.first_number)
+                const current = parseFloat(this.last_number)
+                if (isNaN(prev)|| isNaN(current)) return
+                switch(this.operation){
+                    case '+':
+                    computation = prev + current
+                    break
+                    case '-':
+                    computation = prev - current
+                    break
+                    case '*':
+                    computation = prev * current
+                    break
+                    case '/':
+                    computation = prev / current
+                    break
+                    default:
+                        return
+                }
+                this.last_number = computation
+                this.opearion = undefined
+                this.first_number = ''
+            }
+            getDisplayNumber(number){
+                const stringNumber = number.toString()
+                const integerDigits = parseFloat(stringN|)
+                const floatNumber = parseFloat(number)
+                if (isNaN(floatNumber))return ' '
+                return floatNumber.toLocaleString('en')
+                return number
+            }
+            updateDisplay(){
+                this.lastnumber.innerText = this.last_number
+                this.firstnumber.innerText = this.first_number
+            }
+
+        }
+
+        const number = document.querySelectorAll('.number') 
+        const operation = document.querySelectorAll('.operation')
+        const firstnumber = document.querySelector('.first_number') 
+        const lastnumber = document.querySelector('.last_number')
+        const equalsto = document.querySelector('.equals')
+        const clear = document.querySelector('.clear')
+        
+        const calculator= new Calculator(firstnumber,lastnumber)
+            number.forEach(button=>{
+                button.addEventListener('click',() =>{
+                    calculator.appendNumber ( button.innerText)
+                    calculator.updateDisplay()
+                })
+        })
+        operation.forEach(button=>{
+                button.addEventListener('click',() =>{
+                    calculator.chooseOperation ( button.innerText)
+                    calculator.updateDisplay()
+                })
+        })
+
+        equalsto.addEventListener('click',button =>{
+            calculator.compute()
+            calculator.updateDisplay()
+        })
+
+        clear.addEventListener('click',button =>{
+            calculator.clearScreen()
+            calculator.updateDisplay()
+        })
+
+
+            // function calculator(val){
+            //      document.getElementById("first_number").value = val;
+            //      return val;
+            // }
+            // function compute(val){
+            //     document.getElementById("first_number").value = val;
+            //     document.getElementById("result").value = parseInt(a)+parseInt(b);
+            // }
+
+       </script>
+</body>
+</html>
