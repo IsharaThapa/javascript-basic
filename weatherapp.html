@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+        <input type = "text" name="location" id = "input" placeholder = "Enter location"/>
+        <button type="submit" id = "submit">Submit</button>
+
+    <div class ="wrapper">
+        <div class = "output">
+            <h2 id = "cityoutput"></h2>
+            <p id = "description"></p>
+            <p id = "wind"></p>
+            <p id = "tempr"></p>
+        </div>
+    </div>
+    <script>
+        var inputval = document.querySelector('#input')
+        var btn = document.querySelector('#submit')
+        var city = document.querySelector('#cityoutput')
+        var desc = document.querySelector('#description')
+        var wind = document.querySelector('#wind')
+        var temp = document.querySelector('#tempr')
+        //api key for authentication
+        apik = "5aff810c8c3940ab8b154502232002"
+
+        
+        btn.addEventListener('click', function(){
+            fetch('http://api.weatherapi.com/v1/current.json?key=5aff810c8c3940ab8b154502232002&q=' +inputval.value + '&aqi=yes')
+            .then(res => res.json())
+
+            .then(data => {
+
+            var nameval = data['location']['name'] 
+            var descp = data['current']['condition']['text']
+            var temperature = data['current']['temp_c']
+            var wndspd = data['current']['wind_kph']
+            
+            city.innerHTML= 'Weather of <span>' + nameval + '</span>';
+            temp.innerHTML = 'Temperature: <span>'+  temperature  + 'deg C</span>';
+            desc.innerHTML = 'Sky Conditions: <span>'+ descp + '</span>';
+            wind.innerHTML = 'Wind Speed: <span>'+ wndspd  +'kph</span>';
+
+        }) 
+    })
+        
+    </script>
+</body>
+</html>
